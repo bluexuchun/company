@@ -21,12 +21,15 @@ class Index extends React.Component {
 
   }
 
-  linkTo = () => {
-    let link = document.getElementById('container');
-    link.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start'
-    });
+  linkTo = (name) => {
+    console.log(name);
+    let link = document.getElementById(name);
+    if(link){
+      link.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
   }
 
   render () {
@@ -43,9 +46,9 @@ class Index extends React.Component {
           <div className="header">
             <div className="logo">创未科技</div>
             <ul className="navs">
-              <li className="navs-li">服务</li>
-              <li className="navs-li">案例</li>
-              <li className="navs-li">联系我们</li>
+              <li className="navs-li" onClick={this.linkTo.bind(this,'service')}>服务</li>
+              <li className="navs-li" onClick={this.linkTo.bind(this,'case')}>案例</li>
+              <li className="navs-li" onClick={this.linkTo.bind(this,'contact')}>联系我们</li>
             </ul>
           </div>
           {/* 内容 */}
@@ -59,15 +62,15 @@ class Index extends React.Component {
           {/* 查看更多 */}
           <div className="cover-footer">
             <div className="footer-word">查看我们提供的服务</div>
-            <img className="up-icon" onClick={this.linkTo} src={Up} alt=""/>
+            <img className="up-icon" onClick={this.linkTo.bind(this,'service')} src={Up} alt=""/>
           </div>
 
         </div>
 
         {/* 其他内容 */}
-        <div className="container" id="container">
+        <div className="container">
           {/* 服务 */}
-          <div className="container-item">
+          <div className="container-item" id="service">
             <div className="item-tit">服务</div>
             <div className="item-desc">我们为客户提供包括网站、小程序、移动APP在内的全套客户端制作</div>
             <ul className="service-ul">
@@ -87,7 +90,7 @@ class Index extends React.Component {
           </div>
 
           {/* 案例 */}
-          <div className="container-item">
+          <div className="container-item" id="case">
             <div className="item-tit">案例</div>
             <ul className="case-ul">
               <li className="case-box">
@@ -133,7 +136,7 @@ class Index extends React.Component {
           </div>
 
           {/* 联系我们 */}
-          <div className="container-item">
+          <div className="container-item" id="contact">
             <div className="item-tit">联系我们</div>
             <div className="item-desc">请尽可能阐述您的需求，我们可以更了解您的想法</div>
             <form className="form" noValidate autoComplete="off">
