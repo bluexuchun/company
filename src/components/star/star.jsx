@@ -9,7 +9,7 @@ export default class Star extends React.Component {
       W: this.props.W || document.body.clientWidth,
       H: this.props.H || document.body.clientHeight,
       // 景深
-      fl: this.props.fl || 250,
+      fl: this.props.fl || 150,
       // 生成点的数量
       starNums: this.props.starNums || 100,
       // 存储点

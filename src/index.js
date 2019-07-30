@@ -22,7 +22,7 @@ ReactDOM.render(
   (<MuiThemeProvider theme={theme}>
     <BrowserRouter>
       <Switch>
-        <Route path="/" component={Main}></Route>
+        <Route path="/" component={Index}></Route>
         <Redirect path="*" to="/" />
       </Switch>
     </BrowserRouter>

@@ -3,6 +3,7 @@ import './index.less'
 import { AppBar,Toolbar,Input,Typography,TextField,Button } from '@material-ui/core'
 import { Search } from '@material-ui/icons'
 import Bg from '../main/imgs/bg.png'
+import Logo from '../main/imgs/logo.png'
 import Up from '../main/imgs/up.png'
 import Web from '../main/imgs/web.png'
 import Xcx from '../main/imgs/small_wechat.png'
@@ -44,7 +45,9 @@ class Index extends React.Component {
           <div className="cover-img"></div>
           {/* 顶部导航栏 */}
           <div className="header">
-            <div className="logo">创未科技</div>
+            <div className="logo">
+              <img className="icon-logo" src={Logo} alt=""/>
+            </div>
             <ul className="navs">
               <li className="navs-li" onClick={this.linkTo.bind(this,'service')}>服务</li>
               <li className="navs-li" onClick={this.linkTo.bind(this,'case')}>案例</li>
@@ -195,7 +198,7 @@ class Index extends React.Component {
 
         {/* 结尾 */}
         <div className="footer">
-          ©创未科技 沪ICP备xxxxxx号-1
+          ©上海云淳网络科技有限公司 沪ICP备xxxxxx号-1
         </div>
       </div>
     )
